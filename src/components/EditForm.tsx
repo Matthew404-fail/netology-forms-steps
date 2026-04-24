@@ -6,11 +6,6 @@ type StepsEditType = {
   distance: string | null;
 };
 
-type EditFormProps = {
-  selectedItem: StepsType | null;
-  handleSubmit: (item: StepsType, isEditing: boolean) => void;
-};
-
 const DEFAULT_EDIT_STEPS_ITEM: StepsEditType = {
   date: null,
   distance: null,
@@ -18,6 +13,11 @@ const DEFAULT_EDIT_STEPS_ITEM: StepsEditType = {
 
 const isDateValid = (date: string) => {
   return /^[0-3][0-9]\.[0-1][0-9]\.[0-9][0-9][0-9][0-9]$/i.test(date);
+};
+
+type EditFormProps = {
+  selectedItem: StepsType | null;
+  handleSubmit: (item: StepsType, isEditing: boolean) => void;
 };
 
 const EditForm = ({ selectedItem, handleSubmit }: EditFormProps) => {
